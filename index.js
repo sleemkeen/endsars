@@ -75,7 +75,12 @@ app.use(session(sessionOptions));
 
 
 app.get('/', function(req, res){
-  res.json({ message: 'Fuck off!'});
+  res.json({ message: 'Api for endsars'});
+});
+
+app.get('/bg', function(req, res){
+  var result = {};
+  res.json({ message: 'Api for endsars'});
 });
 
 

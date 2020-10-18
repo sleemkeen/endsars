@@ -3,7 +3,7 @@ module.exports = {
     "data": [
         {
             "id": 4,
-            "url": "https://res.cloudinary.com/sleemkeen/image/upload/v1597909986/fi9p8adyjpetmgwrnpuc.jpg",
+            "url": "https://res.cloudinary.com/dr7xnnq21/image/upload/v1603040587/endsars13_lvmvnf.jpg",
             "status": 0,
             "created_at": "2020-08-20T07:53:06.000000Z",
             "updated_at": "2020-08-20T07:53:06.000000Z",

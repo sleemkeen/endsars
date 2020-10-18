@@ -15,6 +15,9 @@ var {
   developmentErrors,
 } = require('./handlers');
 
+var bgData = require('./data.js');
+
+
 var config = require('./config.js');
 console.log(config.PORT);
 
@@ -79,8 +82,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/bg', function(req, res){
-  var result = {};
-  res.json({ message: 'Api for endsars'});
+  res.json(bgData);
 });
 
 

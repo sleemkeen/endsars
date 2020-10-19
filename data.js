@@ -64,6 +64,14 @@ module.exports = {
             "created_at": "2020-09-15T10:18:46.000000Z",
             "updated_at": "2020-09-15T10:18:46.000000Z",
             "deleted_at": null,
+        },
+        {
+            "id": 12,
+            "url": "https://res.cloudinary.com/dr7xnnq21/image/upload/v1603091392/WhatsAppStory_100aa7de-7_ymtuef.jpg",
+            "status": 0,
+            "created_at": "2020-09-15T10:18:46.000000Z",
+            "updated_at": "2020-09-15T10:18:46.000000Z",
+            "deleted_at": null,
         }
     ],
     "message": "success"

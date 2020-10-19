@@ -3,7 +3,7 @@ module.exports = {
     "data": [
         {
             "id": 4,
-            "url": "https://res.cloudinary.com/dr7xnnq21/image/upload/v1603040587/endsars13_lvmvnf.jpg",
+            "url": "https://res.cloudinary.com/dr7xnnq21/image/upload/v1603091392/WhatsAppStory_100aa7de-7_ymtuef.jpg",
             "status": 0,
             "created_at": "2020-08-20T07:53:06.000000Z",
             "updated_at": "2020-08-20T07:53:06.000000Z",
@@ -11,7 +11,7 @@ module.exports = {
         },
         {
             "id": 5,
-            "url": "https://res.cloudinary.com/dr7xnnq21/image/upload/v1603042113/tiredsars_btubtu.jpg",
+            "url": "https://res.cloudinary.com/dr7xnnq21/image/upload/v1603040587/endsars13_lvmvnf.jpg",
             "status": 0,
             "created_at": "2020-08-20T07:53:41.000000Z",
             "updated_at": "2020-08-20T07:53:41.000000Z",

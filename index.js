@@ -85,6 +85,13 @@ app.get('/bg', function(req, res){
   res.json(bgData);
 });
 
+app.get('/channel', function(req, res){
+  var channel = {
+    url: "https://s4.radio.co/s99d55c85b/listen"
+  };
+  res.json(channel);
+});
+
 
 var _twitterConsumerKey = config.TWITTER_CONSUMER_KEY;
 var _twitterConsumerSecret = config.TWITTER_CONSUMER_SECRET;

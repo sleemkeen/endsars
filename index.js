@@ -78,7 +78,7 @@ app.use(session(sessionOptions));
 
 
 app.get('/', function(req, res){
-  res.json({ message: 'Api for endsars'});
+  res.json({ message: 'Api for reno tweets 🔥🔥🔥🔥🔥'});
 });
 
 app.get('/bg', function(req, res){
@@ -174,6 +174,7 @@ app.get('/statuses/user_timeline', function(req, res) {
     screen_name: req.query.screen_name,
     count: req.query.count || 50,
     exclude_replies: true,
+    track: ['RenosNuggets', 'EndSARS'] ,
     include_rts: true,
     tweet_mode: 'extended',
   }, (err, data, response) => {
@@ -183,57 +184,6 @@ app.get('/statuses/user_timeline', function(req, res) {
 });
 
 
-var _googleAppID = config.GOOGLE_APP_ID;
-var _googleAppSecret = config.GOOGLE_CONSUMER_SECRET;
-console.log("_googleAppID: %s and _googleAppSecret %s", _googleAppID, _googleAppSecret);
-
-function consumer2() {
-  return new oauth.OAuth2(
-     _googleAppID, 
-     _googleAppSecret, 
-     'https://accounts.google.com/o', 
-      '/oauth2/auth', 
-      '/oauth2/token', 
-      null
-   );
-}
-
-app.get('/sessions/connect2', function(req, res){
-  res.redirect( consumer2().getAuthorizeUrl({
-       'scope': 'https://www.googleapis.com/auth/calendar.readonly',
-       'response_type': 'code',
-       'redirect_uri': config.HOSTPATH+'/sessions/oauth2'
-  }));
-});
-
-app.get('/sessions/oauth2', function(req, res){
-  req.session.oauth2AuthorizationCode = req.query['code'];
-  consumer2().getOAuthAccessToken( req.session.oauth2AuthorizationCode, 
-         {'grant_type': 'authorization_code',
-          'redirect_uri': config.HOSTPATH+'/sessions/oauth2'},
-    function(error, access_token, refresh_token, results){ //callback when access_token is ready
-      if (error) {
-        res.send("Error getting OAuth access token : " + sys.inspect(error), 500);
-      } else {    
-        req.session.oauth2AccessToken = access_token;
-        req.session.oauth2RefreshToken = refresh_token;
-        consumer2().get( //use the access token to request the data
-          'https://www.googleapis.com/calendar/v3/users/me/calendarList',
-          req.session.oauth2AccessToken, 
-          function(error,data) { //callback when data is returned
-            if (error) {
-              res.send("Error getting data : " + sys.inspect(error), 500);
-            } else {
-              data = JSON.parse(data);
-              console.log('we have data ' + sys.inspect(data) );
-              res.send("Google says "+ sys.inspect(data));
-            };          
-          }
-        );
-      };  
-    }
-  );
-});
 
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(notFound);
